@@ -1,37 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html>
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>MWApp Label Print</title>
-        <link rel="stylesheet" type="text/css" href="PreviewAndPrintLabel.css" />
         <script src = "http://code.jquery.com/jquery-1.4.2.min.js" type="text/javascript" charset="UTF-8"> </script>
-        <script src = "http://labelwriter.com/software/dls/sdk/js/DYMO.Label.Framework.latest.js" type="text/javascript" charset="UTF-8"> </script>
-        <!-- <script type = "text/javascript" src = "framework.js"></script> -->
-        <script type = "text/javascript" src = "Untitled-1.js"></script>
+        <script src = "http://www.labelwriter.com/software/dls/sdk/js/DYMO.Label.Framework.3.0.js" type="text/javascript" charset="UTF-8"> </script>
+        <script type = "text/javascript" src = "printLabel.js"></script>
 
     </head>
 
     <body>
 
         <p type="text" id="messageText"></p>
-        <a href="../generated.label" id="generatedLabel"></a>
-        <img src="" id="labelImage" alt="No label found"></img>
-
+        
         <div class="printControls">
             <label for="printersSelect">Printer:</label>
             <select id="printersSelect"></select>
-            <button id="printButton">Print</button>
+            <button id="printButton">Print Again</button>
         </div>
+
+        <a href="../generated.label" id="generatedLabel"></a>
+        <img src="" id="labelImage" alt="No label found"></img>
 
     </body>
 
 </html>
-
-<!--
-<div id="labelFileSelection">
-    <label for="labelFile">Select label file: </label>
-    <input type="file" id="labelFile" name="labelFile"/>
-</div>
--->
