@@ -209,7 +209,7 @@
       <Verticalized>False</Verticalized>
       <StyledText>
         <Element>
-          <String>Western Digital</String>
+          <String>Hitachi</String>
           <Attributes>
             <Font Family="Helvetica" Size="13" Bold="False" Italic="False" Underline="False" Strikeout="False"/>
             <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>
@@ -235,7 +235,7 @@
       <Verticalized>False</Verticalized>
       <StyledText>
         <Element>
-          <String>WDC WD1002FBYS-18W8B0</String>
+          <String>APPLE HDD HTS547550A9E384</String>
           <Attributes>
             <Font Family="Helvetica" Size="13" Bold="False" Italic="False" Underline="False" Strikeout="False"/>
             <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>
@@ -261,7 +261,7 @@
       <Verticalized>False</Verticalized>
       <StyledText>
         <Element>
-          <String>1.00 TB</String>
+          <String>500 GB</String>
           <Attributes>
             <Font Family="Helvetica" Size="13" Bold="False" Italic="False" Underline="False" Strikeout="False"/>
             <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>
@@ -287,7 +287,7 @@
       <Verticalized>False</Verticalized>
       <StyledText>
         <Element>
-          <String>7200</String>
+          <String>5400</String>
           <Attributes>
             <Font Family="Helvetica" Size="13" Bold="False" Italic="False" Underline="False" Strikeout="False"/>
             <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>
@@ -313,7 +313,7 @@
       <Verticalized>False</Verticalized>
       <StyledText>
         <Element>
-          <String>0</String>
+          <String>4</String>
           <Attributes>
             <Font Family="Helvetica" Size="13" Bold="False" Italic="False" Underline="False" Strikeout="False"/>
             <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>
