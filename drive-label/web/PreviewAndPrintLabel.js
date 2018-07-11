@@ -24,7 +24,7 @@
     // called when the document completly loaded
     function onload() {
         var labelFile = document.getElementById('labelFile');
-        //var addressTextArea = document.getElementById('addressTextArea');
+        // var addressTextArea = document.getElementById('addressTextArea');
         var printersSelect = document.getElementById('printersSelect');
         var printButton = document.getElementById('printButton');
         var messageText = document.getElementById('messageText')
@@ -32,7 +32,7 @@
 
         // initialize controls
         printButton.disabled = true;
-        //addressTextArea.disabled = true;
+        // addressTextArea.disabled = true;
 
         // Generates label preview and updates corresponend <img> element
         // Note: this does not work in IE 6 & 7 because they don't support data urls
@@ -51,6 +51,7 @@
         function loadPrinters() {
             var printers = dymo.label.framework.getPrinters();
             if (printers.length == 0) {
+                messageText.textContent = "Error!";
                 alert("No DYMO printers are installed. Install DYMO printers.");
                 return;
             }
@@ -68,7 +69,7 @@
             }
         }
 
-        /* returns current address on the label 
+        /*/ returns current address on the label 
         function getAddress() {
             if (!label || label.getAddressObjectCount() == 0)
                 return "";
@@ -85,7 +86,7 @@
         }
 
 
-        //updates address on the label when user types in textarea field
+        /* updates address on the label when user types in textarea field
         addressTextArea.onkeyup = function () {
             if (!label) {
                 alert('Load label before entering address data');
@@ -98,43 +99,43 @@
 
         // prints the label
         printButton.onclick = function () {
-            messageText.textContent = "Printing...";
             try {
                 if (!label) {
+                    messageText.textContent = "Error!";
                     alert("Load label before printing");
                     return;
                 }
 
                 //alert(printersSelect.value);
                 label.print(printersSelect.value);
-                messageText.textContent = "Print Successful";
                 //label.print("unknown printer");
             }
             catch (e) {
-                messageText.textContent = error;
+                messageText.textContent = "Error!";
                 alert(e.message || e);
             }
         }
         function getAddressLabelXml() {
 
-            var labelXml = dymo.label.framework.openLabelFile(generatedLabel);
+            var labelXml = dymo.label.framework.openLabelFile(generatedLabel)
             return labelXml;
         }
         function loadLabelFromWeb() {
             // use jQuery API to load label
             //$.get("Address.label", function(labelXml)
             //{
+            //label = dymo.label.framework.openLabelXml(getAddressLabelXml());
             label = dymo.label.framework.openLabelXml(getAddressLabelXml());
-            // check that label has an address object
-            /*if (label.getAddressObjectCount() == 0) {
-                alert("Selected label does not have an address object on it. Select another label");
-                return;
-            }*/
+            // check that label has an address object // Currently disabled
+            //if (label.getAddressObjectCount() == 0) {
+            //    alert("Selected label does not have an address object on it. Select another label");
+            //    return;
+            //}
 
             updatePreview();
-            //addressTextArea.value = getAddress();
+            // addressTextArea.value = getAddress();
             printButton.disabled = false;
-            //addressTextArea.disabled = false;
+            // addressTextArea.disabled = false;
             //}, "text");
         }
 
@@ -156,28 +157,28 @@
 
         } catch (error) {
 
-            messageText.textContent = error;
+            messageText.textContent = "Error!";
             
         }
     }
 
     function initTests()
-	{
-		if(dymo.label.framework.init)
-		{
-			//dymo.label.framework.trace = true;
-			dymo.label.framework.init(onload);
-		} else {
-			onload();
-		}
-	}
+    {
+        if(dymo.label.framework.init)
+        {
+            //dymo.label.framework.trace = true;
+            dymo.label.framework.init(onload);
+        } else {
+            onload();
+        }
+    }
 
-	// register onload event
-	if (window.addEventListener)
-		window.addEventListener("load", initTests, false);
-	else if (window.attachEvent)
-		window.attachEvent("onload", initTests);
-	else
-		window.onload = initTests;
+    // register onload event
+    if (window.addEventListener)
+        window.addEventListener("load", initTests, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", initTests);
+    else
+        window.onload = initTests;
 
 }());
